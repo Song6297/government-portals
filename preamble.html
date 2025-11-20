@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constitution of India - Preamble & Rights</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="BG.png">
+    <link rel="shortcut icon" type="image/png" href="BG.png">
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .preamble-page {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .preamble-header-page {
+            background: linear-gradient(135deg, #000080 0%, #1e40af 50%, #000080 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            border-bottom: 4px solid transparent;
+            border-image: linear-gradient(90deg, #FF9933 0%, #FFFFFF 50%, #138808 100%) 1;
+        }
+
+        .preamble-header-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-4px);
+        }
+
+        .preamble-title {
+            text-align: center;
+            flex: 1;
+        }
+
+        .preamble-title h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        .preamble-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .preamble-content {
+            background: white;
+            border-radius: 1rem;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            border: 3px solid #FF9933;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .preamble-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #FF9933 0%, #FFFFFF 50%, #138808 100%);
+        }
+
+        .preamble-text-content {
+            font-family: 'Georgia', serif;
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #1e293b;
+            text-align: justify;
+        }
+
+        .preamble-text-content strong {
+            color: #000080;
+            font-weight: 700;
+        }
+
+        .preamble-text-content .opening {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #000080;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .preamble-values {
+            margin: 2rem 0;
+            padding-left: 2rem;
+        }
+
+        .preamble-values li {
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+
+        .preamble-closing {
+            margin-top: 2rem;
+            font-style: italic;
+            text-align: center;
+            color: #475569;
+            font-size: 1rem;
+        }
+
+        .book-structure {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .book-page {
+            background: white;
+            border-radius: 1rem;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-left: 6px solid;
+            position: relative;
+        }
+
+        .book-page.left {
+            border-left-color: #6366f1;
+        }
+
+        .book-page.right {
+            border-left-color: #10b981;
+        }
+
+        .book-page h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .book-page h2 i {
+            font-size: 1.5rem;
+        }
+
+        .book-page.left h2 {
+            color: #6366f1;
+        }
+
+        .book-page.right h2 {
+            color: #10b981;
+        }
+
+        .rights-list, .duties-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .rights-list li, .duties-list li {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: #f8fafc;
+            border-radius: 0.5rem;
+            border-left: 3px solid;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            transition: all 0.3s;
+        }
+
+        .rights-list li {
+            border-left-color: #6366f1;
+        }
+
+        .duties-list li {
+            border-left-color: #10b981;
+        }
+
+        .rights-list li:hover, .duties-list li:hover {
+            background: #f1f5f9;
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .rights-list li strong, .duties-list li strong {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+        }
+
+        @media (max-width: 1024px) {
+            .book-structure {
+                grid-template-columns: 1fr;
+            }
+
+            .preamble-header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .preamble-container {
+                padding: 2rem 1rem;
+            }
+
+            .preamble-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .book-page {
+                padding: 1.5rem;
+            }
+
+            .preamble-text-content {
+                font-size: 1rem;
+            }
+
+            .preamble-text-content .opening {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body class="preamble-page">
+    <!-- Organization Branding Bar -->
+    <div class="org-branding-bar">
+        <div class="org-branding-content">
+            <div class="org-logo-group">
+                <img src="BGT.png" alt="Beyond Guidance" class="org-logo">
+                <div class="org-divider"></div>
+                <img src="IICT.png" alt="Islamic Information Centre" class="org-logo">
+            </div>
+            <div class="org-text">
+                <span class="org-initiative">A Beyond Guidance Initiative</span>
+                <span class="org-separator">•</span>
+                <span class="org-by">Islamic Information Centre</span>
+            </div>
+        </div>
+    </div>
+    
+    <header class="preamble-header-page">
+        <div class="preamble-header-content">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Portal
+            </a>
+            <div class="preamble-title">
+                <h1>Constitution of India</h1>
+            </div>
+            <div style="width: 150px;"></div>
+        </div>
+    </header>
+
+    <div class="preamble-container">
+        <!-- Preamble Section -->
+        <div class="preamble-content">
+            <div class="preamble-text-content">
+                <div class="opening">THE PREAMBLE</div>
+                
+                <p><strong>WE, THE PEOPLE OF INDIA,</strong> having solemnly resolved to constitute India into a <strong>SOVEREIGN SOCIALIST SECULAR DEMOCRATIC REPUBLIC</strong> and to secure to all its citizens:</p>
+                
+                <ul class="preamble-values">
+                    <li><strong>JUSTICE,</strong> social, economic and political;</li>
+                    <li><strong>LIBERTY</strong> of thought, expression, belief, faith and worship;</li>
+                    <li><strong>EQUALITY</strong> of status and of opportunity;</li>
+                    <li>and to promote among them all <strong>FRATERNITY</strong> assuring the dignity of the individual and the unity and integrity of the Nation;</li>
+                </ul>
+                
+                <p class="preamble-closing">IN OUR CONSTITUENT ASSEMBLY this twenty-sixth day of November, 1949, do HEREBY ADOPT, ENACT AND GIVE TO OURSELVES THIS CONSTITUTION.</p>
+            </div>
+        </div>
+
+        <!-- Book Structure: Fundamental Rights & Duties -->
+        <div class="book-structure">
+            <!-- Left Page: Fundamental Rights -->
+            <div class="book-page left">
+                <h2>
+                    <i class="fas fa-balance-scale"></i>
+                    Fundamental Rights
+                </h2>
+                <ul class="rights-list">
+                    <li>
+                        <strong>Right to Equality (Articles 14-18)</strong>
+                        Equality before law, prohibition of discrimination, equality of opportunity in public employment, abolition of untouchability and titles.
+                    </li>
+                    <li>
+                        <strong>Right to Freedom (Articles 19-22)</strong>
+                        Freedom of speech and expression, assembly, association, movement, residence, and profession.
+                    </li>
+                    <li>
+                        <strong>Right against Exploitation (Articles 23-24)</strong>
+                        Prohibition of human trafficking, forced labor, and child labor in hazardous industries.
+                    </li>
+                    <li>
+                        <strong>Right to Freedom of Religion (Articles 25-28)</strong>
+                        Freedom of conscience, free profession, practice and propagation of religion.
+                    </li>
+                    <li>
+                        <strong>Cultural and Educational Rights (Articles 29-30)</strong>
+                        Protection of interests of minorities to conserve their language, script and culture.
+                    </li>
+                    <li>
+                        <strong>Right to Constitutional Remedies (Article 32)</strong>
+                        Right to move the Supreme Court for enforcement of Fundamental Rights.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right Page: Fundamental Duties -->
+            <div class="book-page right">
+                <h2>
+                    <i class="fas fa-hands-helping"></i>
+                    Fundamental Duties
+                </h2>
+                <ul class="duties-list">
+                    <li>
+                        <strong>Duty 1:</strong>
+                        To abide by the Constitution and respect its ideals and institutions, the National Flag and the National Anthem.
+                    </li>
+                    <li>
+                        <strong>Duty 2:</strong>
+                        To cherish and follow the noble ideals which inspired our national struggle for freedom.
+                    </li>
+                    <li>
+                        <strong>Duty 3:</strong>
+                        To uphold and protect the sovereignty, unity and integrity of India.
+                    </li>
+                    <li>
+                        <strong>Duty 4:</strong>
+                        To defend the country and render national service when called upon to do so.
+                    </li>
+                    <li>
+                        <strong>Duty 5:</strong>
+                        To promote harmony and the spirit of common brotherhood amongst all the people of India.
+                    </li>
+                    <li>
+                        <strong>Duty 6:</strong>
+                        To value and preserve the rich heritage of our composite culture.
+                    </li>
+                    <li>
+                        <strong>Duty 7:</strong>
+                        To protect and improve the natural environment including forests, lakes, rivers and wildlife.
+                    </li>
+                    <li>
+                        <strong>Duty 8:</strong>
+                        To develop the scientific temper, humanism and the spirit of inquiry and reform.
+                    </li>
+                    <li>
+                        <strong>Duty 9:</strong>
+                        To safeguard public property and to abjure violence.
+                    </li>
+                    <li>
+                        <strong>Duty 10:</strong>
+                        To strive towards excellence in all spheres of individual and collective activity.
+                    </li>
+                    <li>
+                        <strong>Duty 11:</strong>
+                        To provide opportunities for education to children between the age of six and fourteen years.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logos">
+                        <img src="BGT.png" alt="Beyond Guidance Logo" class="footer-logo-img">
+                        <img src="IICT.png" alt="Islamic Information Centre Logo" class="footer-logo-img">
+                    </div>
+                    <div class="footer-brand-text">
+                        <h3>Beyond Guidance</h3>
+                        <p>An Initiative by Islamic Information Centre</p>
+                    </div>
+                </div>
+                <div class="footer-description">
+                    <p>Empowering citizens with comprehensive access to government portals, schemes, and services. Making governance transparent and accessible for all.</p>
+                </div>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="footer-bottom">
+                <div class="footer-credits">
+                    <p>Developed with <i class="fas fa-heart"></i> by <strong>Beyond Guidance</strong></p>
+                    <p class="footer-org">Islamic Information Centre © 2024</p>
+                </div>
+                <div class="footer-links">
+                    <a href="preamble.html" class="footer-link">
+                        <i class="fas fa-book-open"></i> Constitution
+                    </a>
+                    <a href="about.html" class="footer-link">
+                        <i class="fas fa-info-circle"></i> About Us
+                    </a>
+                    <a href="index.html" class="footer-link">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

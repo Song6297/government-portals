@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Government Portals Directory</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="BG.png">
+    <link rel="shortcut icon" type="image/png" href="BG.png">
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="chatbot.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    
+    <!-- Organization Branding Bar -->
+    <div class="org-branding-bar">
+        <div class="org-branding-content">
+            <div class="org-logo-group">
+                <img src="BGT.png" alt="Beyond Guidance" class="org-logo">
+                <div class="org-divider"></div>
+                <img src="IICT.png" alt="Islamic Information Centre" class="org-logo">
+            </div>
+            <div class="org-text">
+                <span class="org-initiative">A Beyond Guidance Initiative</span>
+                <span class="org-separator">•</span>
+                <span class="org-by">Islamic Information Centre</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navigation Bar with Filters -->
+    <nav class="main-navbar">
+        <div class="navbar-content" id="navbarContent">
+            <div class="navbar-filters">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="searchInput" placeholder="Search portals by name or description...">
+                </div>
+                <div class="custom-dropdown" id="customCategoryDropdown" tabindex="0" aria-haspopup="listbox" aria-expanded="false" aria-label="Select category">
+                    <button id="dropdownToggle" class="dropdown-toggle" aria-haspopup="listbox" aria-expanded="false">
+                        <span id="dropdownSelected"><i class="fas fa-layer-group cat-icon"></i> All Categories</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-list" id="dropdownList" role="listbox" tabindex="-1" style="display:none;">
+                        <div class="category-option selected" data-cat="" role="option" tabindex="0">
+                            <i class="fas fa-layer-group cat-icon"></i> All Categories
+                        </div>
+                        
+                        <!-- Karnataka State Services -->
+                        <div class="dropdown-section">
+                            <div class="dropdown-heading">
+                                <i class="fas fa-map-marker-alt"></i> Karnataka State Services
+                            </div>
+                            <div class="category-option" data-cat="karnataka-electricity" role="option" tabindex="0">
+                                <i class="fas fa-bolt cat-icon"></i> BESCOM - Electricity
+                            </div>
+                            <div class="category-option" data-cat="karnataka-transport" role="option" tabindex="0">
+                                <i class="fas fa-bus cat-icon"></i> BMTC & KSRTC - Transport
+                            </div>
+                            <div class="category-option" data-cat="karnataka-land" role="option" tabindex="0">
+                                <i class="fas fa-file-alt cat-icon"></i> Bhoomi - Land Records
+                            </div>
+                            <div class="category-option" data-cat="karnataka-services" role="option" tabindex="0">
+                                <i class="fas fa-building cat-icon"></i> Karnataka One & Sakala
+                            </div>
+                        </div>
+                        
+                        <!-- Defense Services -->
+                        <div class="dropdown-section">
+                            <div class="dropdown-heading">
+                                <i class="fas fa-shield-alt"></i> Defense Services
+                            </div>
+                            <div class="category-option" data-cat="defense-army" role="option" tabindex="0">
+                                <i class="fas fa-user-shield cat-icon"></i> Indian Army
+                            </div>
+                            <div class="category-option" data-cat="defense-navy" role="option" tabindex="0">
+                                <i class="fas fa-anchor cat-icon"></i> Indian Navy
+                            </div>
+                            <div class="category-option" data-cat="defense-airforce" role="option" tabindex="0">
+                                <i class="fas fa-plane cat-icon"></i> Indian Air Force
+                            </div>
+                            <div class="category-option" data-cat="defense-welfare" role="option" tabindex="0">
+                                <i class="fas fa-medkit cat-icon"></i> Ex-Servicemen Schemes
+                            </div>
+                        </div>
+                        
+                        <!-- Educational Schemes -->
+                        <div class="dropdown-section">
+                            <div class="dropdown-heading">
+                                <i class="fas fa-graduation-cap"></i> Education & Scholarships
+                            </div>
+                            <div class="category-option" data-cat="education-scholarships" role="option" tabindex="0">
+                                <i class="fas fa-award cat-icon"></i> Scholarships Portal
+                            </div>
+                            <div class="category-option" data-cat="education-entrance" role="option" tabindex="0">
+                                <i class="fas fa-pencil-alt cat-icon"></i> Entrance Exams (NEET/JEE)
+                            </div>
+                            <div class="category-option" data-cat="education-skill" role="option" tabindex="0">
+                                <i class="fas fa-tools cat-icon"></i> Skill Development
+                            </div>
+                            <div class="category-option" data-cat="education-online" role="option" tabindex="0">
+                                <i class="fas fa-laptop cat-icon"></i> Online Learning (SWAYAM)
+                            </div>
+                        </div>
+                        
+                        <!-- Farmer Schemes -->
+                        <div class="dropdown-section">
+                            <div class="dropdown-heading">
+                                <i class="fas fa-tractor"></i> Farmer Schemes
+                            </div>
+                            <div class="category-option" data-cat="farmer-income" role="option" tabindex="0">
+                                <i class="fas fa-rupee-sign cat-icon"></i> PM-KISAN
+                            </div>
+                            <div class="category-option" data-cat="farmer-credit" role="option" tabindex="0">
+                                <i class="fas fa-credit-card cat-icon"></i> Kisan Credit Card
+                            </div>
+                            <div class="category-option" data-cat="farmer-insurance" role="option" tabindex="0">
+                                <i class="fas fa-umbrella cat-icon"></i> Crop Insurance
+                            </div>
+                            <div class="category-option" data-cat="farmer-market" role="option" tabindex="0">
+                                <i class="fas fa-store cat-icon"></i> e-NAM Market
+                            </div>
+                        </div>
+                        
+                        <!-- Identity Documents -->
+                        <div class="dropdown-section">
+                            <div class="dropdown-heading">
+                                <i class="fas fa-id-card"></i> Identity Documents
+                            </div>
+                            <div class="category-option" data-cat="id-aadhaar" role="option" tabindex="0">
+                                <i class="fas fa-fingerprint cat-icon"></i> Aadhaar
+                            </div>
+                            <div class="category-option" data-cat="id-pan" role="option" tabindex="0">
+                                <i class="fas fa-id-badge cat-icon"></i> PAN Card
+                            </div>
+                            <div class="category-option" data-cat="id-voter" role="option" tabindex="0">
+                                <i class="fas fa-vote-yea cat-icon"></i> Voter ID
+                            </div>
+                            <div class="category-option" data-cat="id-passport" role="option" tabindex="0">
+                                <i class="fas fa-passport cat-icon"></i> Passport
+                            </div>
+                            <div class="category-option" data-cat="id-driving" role="option" tabindex="0">
+                                <i class="fas fa-car cat-icon"></i> Driving License
+                            </div>
+                        </div>
+                        
+                        <!-- Employment & Business -->
+                        <div class="dropdown-section">
+                            <div class="dropdown-heading">
+                                <i class="fas fa-briefcase"></i> Employment & Business
+                            </div>
+                            <div class="category-option" data-cat="employment-jobs" role="option" tabindex="0">
+                                <i class="fas fa-user-tie cat-icon"></i> Job Portals
+                            </div>
+                            <div class="category-option" data-cat="employment-epfo" role="option" tabindex="0">
+                                <i class="fas fa-piggy-bank cat-icon"></i> EPFO & ESIC
+                            </div>
+                            <div class="category-option" data-cat="business-startup" role="option" tabindex="0">
+                                <i class="fas fa-rocket cat-icon"></i> Startup India
+                            </div>
+                            <div class="category-option" data-cat="business-msme" role="option" tabindex="0">
+                                <i class="fas fa-industry cat-icon"></i> MSME Registration
+                            </div>
+                        </div>
+                        
+                        <!-- Social Welfare -->
+                        <div class="dropdown-section">
+                            <div class="dropdown-heading">
+                                <i class="fas fa-hands-helping"></i> Social Welfare
+                            </div>
+                            <div class="category-option" data-cat="welfare-health" role="option" tabindex="0">
+                                <i class="fas fa-heartbeat cat-icon"></i> Health Schemes
+                            </div>
+                            <div class="category-option" data-cat="welfare-pension" role="option" tabindex="0">
+                                <i class="fas fa-hand-holding-usd cat-icon"></i> Pension Schemes
+                            </div>
+                            <div class="category-option" data-cat="welfare-women" role="option" tabindex="0">
+                                <i class="fas fa-female cat-icon"></i> Women Welfare
+                            </div>
+                            <div class="category-option" data-cat="welfare-backward" role="option" tabindex="0">
+                                <i class="fas fa-users cat-icon"></i> SC/ST/OBC Schemes
+                            </div>
+                        </div>
+                        
+                        <!-- Digital Services -->
+                        <div class="dropdown-section">
+                            <div class="dropdown-heading">
+                                <i class="fas fa-mobile-alt"></i> Digital Services
+                            </div>
+                            <div class="category-option" data-cat="digital-digilocker" role="option" tabindex="0">
+                                <i class="fas fa-folder-open cat-icon"></i> DigiLocker
+                            </div>
+                            <div class="category-option" data-cat="digital-umang" role="option" tabindex="0">
+                                <i class="fas fa-mobile cat-icon"></i> UMANG App
+                            </div>
+                            <div class="category-option" data-cat="digital-edistrict" role="option" tabindex="0">
+                                <i class="fas fa-certificate cat-icon"></i> e-District
+                            </div>
+                        </div>
+                        
+                        <!-- Governance & Law -->
+                        <div class="dropdown-section">
+                            <div class="dropdown-heading">
+                                <i class="fas fa-landmark"></i> Governance & Law
+                            </div>
+                            <div class="category-option" data-cat="governance-rights" role="option" tabindex="0">
+                                <i class="fas fa-balance-scale cat-icon"></i> Fundamental Rights
+                            </div>
+                            <div class="category-option" data-cat="governance-rti" role="option" tabindex="0">
+                                <i class="fas fa-info-circle cat-icon"></i> RTI Act
+                            </div>
+                            <div class="category-option" data-cat="governance-laws" role="option" tabindex="0">
+                                <i class="fas fa-gavel cat-icon"></i> Important Laws
+                            </div>
+                            <div class="category-option" data-cat="governance-grievance" role="option" tabindex="0">
+                                <i class="fas fa-comment-dots cat-icon"></i> Grievance Redressal
+                            </div>
+                            <div class="category-option" data-cat="governance-legal" role="option" tabindex="0">
+                                <i class="fas fa-hands-helping cat-icon"></i> Free Legal Aid
+                            </div>
+                        </div>
+                        
+                        <!-- Citizen Services & Guides -->
+                        <div class="dropdown-section">
+                            <div class="dropdown-heading">
+                                <i class="fas fa-book-reader"></i> Guides & Resources
+                            </div>
+                            <div class="category-option" data-cat="digital-guides" role="option" tabindex="0">
+                                <i class="fas fa-list-ol cat-icon"></i> Step-by-Step Guides
+                            </div>
+                            <div class="category-option" data-cat="welfare-schemes" role="option" tabindex="0">
+                                <i class="fas fa-search cat-icon"></i> Scheme Eligibility Checker
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <select id="categoryFilter" style="display:none">
+                    <option value="">All Categories</option>
+                    <!-- Karnataka State -->
+                    <option value="karnataka-electricity">BESCOM - Electricity</option>
+                    <option value="karnataka-transport">Transport Services</option>
+                    <option value="karnataka-land">Land Records</option>
+                    <option value="karnataka-services">Karnataka Services</option>
+                    <!-- Defense -->
+                    <option value="defense-army">Indian Army</option>
+                    <option value="defense-navy">Indian Navy</option>
+                    <option value="defense-airforce">Indian Air Force</option>
+                    <option value="defense-welfare">Ex-Servicemen</option>
+                    <!-- Education -->
+                    <option value="education-scholarships">Scholarships</option>
+                    <option value="education-entrance">Entrance Exams</option>
+                    <option value="education-skill">Skill Development</option>
+                    <option value="education-online">Online Learning</option>
+                    <!-- Farmers -->
+                    <option value="farmer-income">PM-KISAN</option>
+                    <option value="farmer-credit">Kisan Credit</option>
+                    <option value="farmer-insurance">Crop Insurance</option>
+                    <option value="farmer-market">e-NAM Market</option>
+                    <!-- Identity -->
+                    <option value="id-aadhaar">Aadhaar</option>
+                    <option value="id-pan">PAN Card</option>
+                    <option value="id-voter">Voter ID</option>
+                    <option value="id-passport">Passport</option>
+                    <option value="id-driving">Driving License</option>
+                    <!-- Employment -->
+                    <option value="employment-jobs">Job Portals</option>
+                    <option value="employment-epfo">EPFO & ESIC</option>
+                    <option value="business-startup">Startup India</option>
+                    <option value="business-msme">MSME</option>
+                    <!-- Welfare -->
+                    <option value="welfare-health">Health Schemes</option>
+                    <option value="welfare-pension">Pension Schemes</option>
+                    <option value="welfare-women">Women Welfare</option>
+                    <option value="welfare-backward">SC/ST/OBC</option>
+                    <!-- Digital -->
+                    <option value="digital-digilocker">DigiLocker</option>
+                    <option value="digital-umang">UMANG</option>
+                    <option value="digital-edistrict">e-District</option>
+                    <!-- Governance -->
+                    <option value="governance-rights">Rights & Duties</option>
+                    <option value="governance-rti">RTI Act</option>
+                    <option value="governance-laws">Laws</option>
+                    <option value="governance-grievance">Grievance Redressal</option>
+                    <option value="governance-legal">Free Legal Aid</option>
+                    <!-- Guides & Resources -->
+                    <option value="digital-guides">Step-by-Step Guides</option>
+                    <option value="welfare-schemes">Scheme Eligibility</option>
+                </select>
+                
+            </div>
+            <div class="navbar-actions">
+                <button id="ai-assistant-btn" class="navbar-btn ai-assistant" aria-label="Open AI Assistant">
+                    <i class="fas fa-robot"></i>
+                    <span>AI Assistant</span>
+                </button>
+                <a href="preamble.html" class="navbar-btn preamble">
+                    <i class="fas fa-book-open"></i>
+                    <span>Constitution</span>
+                </a>
+                <a href="about.html" class="navbar-btn about">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About Us</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Category Dropdown (appears above hero on mobile only) -->
+    <div class="mobile-category-section">
+        <div class="custom-dropdown" id="mobileCategoryDropdown" tabindex="0" aria-haspopup="listbox" aria-expanded="false" aria-label="Select category">
+            <button id="mobileDropdownToggle" class="dropdown-toggle" aria-haspopup="listbox" aria-expanded="false">
+                <span id="mobileDropdownSelected"><i class="fas fa-layer-group cat-icon"></i> All Categories</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="dropdown-list" id="mobileDropdownList" role="listbox" tabindex="-1" style="display:none;">
+                <!-- Same dropdown content as desktop -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="mobile-bottom-nav">
+        <button id="mobile-ai-assistant-btn" class="mobile-nav-item" aria-label="Open AI Assistant">
+            <i class="fas fa-robot"></i>
+            <span>AI Bot</span>
+        </button>
+        <a href="preamble.html" class="mobile-nav-item">
+            <i class="fas fa-book-open"></i>
+            <span>Preamble</span>
+        </a>
+        <a href="about.html" class="mobile-nav-item">
+            <i class="fas fa-info-circle"></i>
+            <span>About</span>
+        </a>
+    </nav>
+
+    <main id="main" class="main-container">
+        <section class="main-content">
+            <header>
+                <div class="header-inner">
+                    <div class="hero-text">
+                        <span class="hero-tag"><i class="fas fa-landmark"></i> Government Portal Directory</span>
+                        <h1>SATYAMEWA JAYATE</h1>
+                        <p class="hero-subtitle">Developed by Islamic Information Centre</p>
+                        <p class="hero-description">Access 90+ verified government portals for education, healthcare, employment, welfare schemes, grievance redressal, legal aid, and citizen services. Your gateway to transparent governance and public services across India.</p>
+                        <div class="hero-meta" role="list">
+                            <div class="hero-meta-item" role="listitem">
+                                <i class="fas fa-globe-asia"></i>
+                                <span>80+ verified portals</span>
+                            </div>
+                            <div class="hero-meta-item" role="listitem">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Trusted government sources</span>
+                            </div>
+                            <div class="hero-meta-item" role="listitem">
+                                <i class="fas fa-clock"></i>
+                                <span>Updated weekly</span>
+                            </div>
+                        </div>
+                        <div class="hero-actions">
+                            <a href="#cardsContainer" class="hero-cta primary">
+                                <i class="fas fa-compass"></i>
+                                Browse portals
+                            </a>
+                            <a href="#searchInput" class="hero-cta ghost">
+                                <i class="fas fa-sliders-h"></i>
+                                Refine filters
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="stats-bar">
+                <div class="stat">
+                    <div class="stat-number" id="totalPortals">0</div>
+                    <div class="stat-label">Total Portals</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" id="activeFilters">0</div>
+                    <div class="stat-label">Active Filters</div>
+                </div>
+                <!-- 'Last Updated' stat removed -->
+            </div>
+            <div class="section-intro">
+                <div class="section-copy">
+                    <p class="eyebrow">Explore directories</p>
+                    <h2>Curated government resources</h2>
+                    <p>Discover verified schemes, citizen services, and technology portals with clear guidance on how to access them.</p>
+                    <div class="section-highlights" role="list">
+                        <span class="section-chip" role="listitem"><i class="fas fa-bolt"></i> Instant search</span>
+                        <span class="section-chip" role="listitem"><i class="fas fa-layer-group"></i> Category curation</span>
+                        <span class="section-chip" role="listitem"><i class="fas fa-download"></i> One-click export</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Loader for card rendering -->
+            <div id="loader" class="loader" aria-hidden="true" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div id="cardsContainer" class="cards-container" aria-live="polite" aria-busy="false">
+                <!-- Cards will be dynamically inserted here -->
+            </div>
+            <!-- Live region for announcements (search results, category changes) -->
+            <div id="ariaLive" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+            <div class="pagination">
+                <button id="prevBtn" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                <span id="pageInfo">Page 1</span>
+                <button id="nextBtn">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logos">
+                        <img src="BGT.png" alt="Beyond Guidance Logo" class="footer-logo-img">
+                        <img src="IICT.png" alt="Islamic Information Centre Logo" class="footer-logo-img">
+                    </div>
+                    <div class="footer-brand-text">
+                        <h3>Beyond Guidance</h3>
+                        <p>An Initiative by Islamic Information Centre</p>
+                    </div>
+                </div>
+                <div class="footer-description">
+                    <p>Empowering citizens with comprehensive access to government portals, schemes, and services. Making governance transparent and accessible for all.</p>
+                </div>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="footer-bottom">
+                <div class="footer-credits">
+                    <p>Developed with <i class="fas fa-heart"></i> by <strong>Beyond Guidance</strong></p>
+                    <p class="footer-org">Islamic Information Centre © 2024</p>
+                </div>
+                <div class="footer-links">
+                    <a href="preamble.html" class="footer-link">
+                        <i class="fas fa-book-open"></i> Constitution
+                    </a>
+                    <a href="about.html" class="footer-link">
+                        <i class="fas fa-info-circle"></i> About Us
+                    </a>
+                    <a href="index.html" class="footer-link">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for detailed portal information -->
+    <div id="portalModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <span id="modalCategory" class="modal-category"></span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3><i class="fas fa-info-circle"></i> Overview</h3>
+                    <p id="modalDescription"></p>
+                </div>
+                <div class="modal-section">
+                    <h3><i class="fas fa-list-ol"></i> Steps to Apply</h3>
+                    <ol id="modalSteps" class="steps-list"></ol>
+                </div>
+                <div class="modal-section">
+                    <h3><i class="fas fa-link"></i> Access Portal</h3>
+                    <a id="modalLink" href="#" target="_blank" class="modal-button">
+                        <i class="fas fa-external-link-alt"></i> Visit Portal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to top button (themed) -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+    <script src="chatbot-backend.js"></script>
+</body>
+</html>
