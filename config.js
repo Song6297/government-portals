@@ -8,7 +8,7 @@ const CONFIG = {
         local: 'http://localhost:3000/api/chat',
         
         // Production backend URL (Render) - Update after deployment
-        production: 'http://localhost:3000/api/chat',
+        production: 'https://government-portals.onrender.com',
         
         // Auto-detect which URL to use
         getUrl: function() {
@@ -34,3 +34,4 @@ const CONFIG = {
 
 // Make config available globally
 window.APP_CONFIG = CONFIG;
+
